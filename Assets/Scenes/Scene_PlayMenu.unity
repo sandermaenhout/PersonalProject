@@ -1921,8 +1921,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2084091995}
-        m_MethodName: 
+      - m_Target: {fileID: 2084091996}
+        m_MethodName: OnSoloButtonClicked
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

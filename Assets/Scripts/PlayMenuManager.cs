@@ -71,6 +71,12 @@ public class PlayMenuManager : MonoBehaviourPunCallbacks
         SceneLoader.Instance.LoadScene("Scene_Menu");
     }
 
+    public void OnSoloButtonClicked()
+    {
+        //SceneManager.LoadScene("Scene_Loading");
+        SceneLoader.Instance.LoadScene("Scene_Play");
+    }
+
     public void OnMultiplayerButtonClicked()
     {
         if (PhotonNetwork.IsConnected)
