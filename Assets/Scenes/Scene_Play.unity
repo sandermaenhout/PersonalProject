@@ -2359,13 +2359,17 @@ MonoBehaviour:
   angleDirection: 0
   minThrow: {x: 0, y: 0, z: 0}
   maxThrow: {x: 0, y: 0, z: 0}
-  ball: {fileID: 26966608121227548, guid: d926e160fbe7547a3ae98085caa8680b, type: 3}
   linkedObject: {fileID: 0}
   target: {fileID: 5915861748573111780}
   curveParticle: {fileID: 1953336813}
   cam: {fileID: 2123007998}
   distance: 1
   down: -0.15
+  moneyAmount: 0
+  ballModels:
+  - {fileID: 26966608121227548, guid: d926e160fbe7547a3ae98085caa8680b, type: 3}
+  - {fileID: 5229461651243091506, guid: 41e88cd4dc20d4933b7597cc7ebf10a5, type: 3}
+  ballSelectorNumber: 0
 --- !u!65 &1256306693
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7836,7 +7840,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 1}
+  m_BackGroundColor: {r: 0.909804, g: 0.909804, b: 0.909804, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0

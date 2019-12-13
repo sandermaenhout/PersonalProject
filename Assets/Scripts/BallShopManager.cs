@@ -8,13 +8,14 @@ using UnityEngine.SceneManagement;
 public class BallShopManager : MonoBehaviour
 {
 
-    int moneyAmount = 10;
+    int moneyAmount = 100;
     int isBaseBallSold;
 
     public TMP_Text moneyAmountText;
     public TMP_Text BaseBallPrice;
 
     public Button buyButton;
+    public Button equipButton;
 
     // Use this for initialization
     void Start()
@@ -26,16 +27,31 @@ public class BallShopManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(moneyAmount);
 
         moneyAmountText.text = moneyAmount.ToString();
 
         isBaseBallSold = PlayerPrefs.GetInt("isBaseBallSold");
-        
-        if (moneyAmount >= 10 && isBaseBallSold == 0)
+
+        Debug.Log(moneyAmount);
+
+        if (moneyAmount >= 10)
+        {
             buyButton.interactable = true;
+        }
         else
+        {
             buyButton.interactable = false;
+        }
+
+        if (isBaseBallSold == 0)
+        {
+          buyButton.gameObject.SetActive(true);
+        }
+        else
+        {
+          equipButton.gameObject.SetActive(true);
+          buyButton.gameObject.SetActive(false);
+        }
     }
 
     public void buyBaseBall()
@@ -46,10 +62,28 @@ public class BallShopManager : MonoBehaviour
         buyButton.gameObject.SetActive(false);
     }
 
+    public void equipBaseBall()
+    {
+        moneyAmount -= 10;
+        PlayerPrefs.SetInt("isBaseBallequip", 1);
+        BaseBallPrice.text = "Equiped!";
+        buyButton.gameObject.SetActive(false);
+        equipButton.gameObject.SetActive(false);
+    }
+
     public void exitShop()
     {
         PlayerPrefs.SetInt("MoneyAmount", moneyAmount);
         SceneLoader.Instance.LoadScene("Scene_Shop");
+    }
+
+    void OnGUI()
+    {
+        //Delete all of the PlayerPrefs settings by pressing this Button
+        if (GUI.Button(new Rect(100, 200, 200, 60), "Delete"))
+        {
+            PlayerPrefs.DeleteAll();
+        }
     }
 
 }

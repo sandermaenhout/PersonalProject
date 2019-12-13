@@ -32,7 +32,7 @@ public class ThrowBall : MonoBehaviour
 
     public Vector3 minThrow;
     public Vector3 maxThrow;
-    public GameObject ball;
+    //public GameObject ball;
     private Transform currentBallChild;
     private float dist;
     private Vector3 v3Offset;
@@ -44,6 +44,16 @@ public class ThrowBall : MonoBehaviour
     public Camera cam;
     public float distance;
     public float down;
+
+    public int moneyAmount;
+    int isBaseBallequip;
+
+    public GameObject[] ballModels;
+
+
+    public int ballSelectorNumber;
+
+
     #endregion
 
     #region Unity_Callbacks
@@ -54,7 +64,21 @@ public class ThrowBall : MonoBehaviour
 
     void Start()
     {
+        
         StartCoroutine(GetBallCoroutine());
+
+        isBaseBallequip = PlayerPrefs.GetInt("isBaseBallequip");
+
+        ballSelectorNumber = 0;
+
+        if (isBaseBallequip == 1)
+        {
+            ballSelectorNumber = 1;
+        }
+        //if (isBilliardBallequip == 1)
+        //{
+        //    ballSelectorNumber = 1;
+        //}
     }
 
     void Update()
@@ -487,7 +511,7 @@ public class ThrowBall : MonoBehaviour
     {
         if (currentBall != null)
             Destroy(currentBall);
-        currentBall = Instantiate(ball, ball.transform.position, Quaternion.identity) as GameObject;
+        currentBall = Instantiate(ballModels[ballSelectorNumber], ballModels[ballSelectorNumber].transform.position, Quaternion.identity) as GameObject;
         //disable collider
         currentBall.GetComponent<Collider>().enabled = false;
     }
@@ -554,7 +578,7 @@ public class ThrowBall : MonoBehaviour
         if (currentBall != null)
             Destroy(currentBall);
 
-        currentBall = Instantiate(ball, ball.transform.position, Quaternion.identity) as GameObject;
+        currentBall = Instantiate(ballModels[ballSelectorNumber], ballModels[ballSelectorNumber].transform.position, Quaternion.identity) as GameObject;
         //disable collider
         currentBall.GetComponent<Collider>().enabled = false;
 

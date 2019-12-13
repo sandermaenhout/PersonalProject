@@ -4,20 +4,14 @@ using UnityEngine;
 
 public class ShopManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
 	public void onBackButtonClicked()
 	{
 		SceneLoader.Instance.LoadScene("Scene_Menu");
 	}
+
+    public void onBallButtonClicked()
+    {
+        SceneLoader.Instance.LoadScene("Scene_Shop_Ball");
+    }
 }
