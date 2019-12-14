@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 public class BallShopManager : MonoBehaviour
 {
 
-    int moneyAmount = 100;
+    int moneyAmount;
     int isBaseBallSold;
 
     public TMP_Text moneyAmountText;
@@ -21,7 +21,7 @@ public class BallShopManager : MonoBehaviour
     void Start()
     {
         Debug.Log(moneyAmount);
-        //moneyAmount = PlayerPrefs.GetInt("MoneyAmount");
+        moneyAmount = PlayerPrefs.GetInt("MoneyAmount");
     }
 
     // Update is called once per frame
@@ -60,21 +60,23 @@ public class BallShopManager : MonoBehaviour
         PlayerPrefs.SetInt("isBaseBallSold", 1);
         BaseBallPrice.text = "Sold!";
         buyButton.gameObject.SetActive(false);
+        PlayerPrefs.Save();
     }
 
     public void equipBaseBall()
     {
-        moneyAmount -= 10;
         PlayerPrefs.SetInt("isBaseBallequip", 1);
         BaseBallPrice.text = "Equiped!";
         buyButton.gameObject.SetActive(false);
         equipButton.gameObject.SetActive(false);
+        PlayerPrefs.Save();
     }
 
     public void exitShop()
     {
         PlayerPrefs.SetInt("MoneyAmount", moneyAmount);
         SceneLoader.Instance.LoadScene("Scene_Shop");
+        PlayerPrefs.Save();
     }
 
     void OnGUI()

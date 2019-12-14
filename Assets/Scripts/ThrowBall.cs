@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 
 public class ThrowBall : MonoBehaviour
 {
@@ -42,12 +43,15 @@ public class ThrowBall : MonoBehaviour
     public Transform target;
     public ParticleSystem curveParticle;
     public Camera cam;
+    public GameObject _gameSoloManager;
     public float distance;
     public float down;
 
     public int moneyAmount;
-    int isBaseBallequip;
 
+
+    int isBaseBallequip;
+    
     public GameObject[] ballModels;
 
 
@@ -64,7 +68,9 @@ public class ThrowBall : MonoBehaviour
 
     void Start()
     {
-        
+
+        moneyAmount = PlayerPrefs.GetInt("MoneyAmount");
+
         StartCoroutine(GetBallCoroutine());
 
         isBaseBallequip = PlayerPrefs.GetInt("isBaseBallequip");
@@ -227,6 +233,8 @@ public class ThrowBall : MonoBehaviour
             ThrowBall.Instance.isCurveThrow = false;
         }
     }
+
+    
 
     IEnumerator rotate(Quaternion from, Quaternion to, float t)
     {

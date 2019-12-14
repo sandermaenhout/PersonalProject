@@ -26,6 +26,9 @@ public class Ball : MonoBehaviour
     public float objectScale = 1.0f;
     public Camera cam;
 
+    public GameObject _gameSoloManager;
+
+
     #endregion
 
     #region Public_Variables
@@ -33,8 +36,11 @@ public class Ball : MonoBehaviour
 
     #region Unity_Callbacks
 
+
     void Start()
     {
+        
+
         rigid = GetComponent<Rigidbody>();
         //initalize gradually jump coroutine
         jumpCoroutine = GraduallyJumpCoroutine(0.4f);
@@ -46,6 +52,10 @@ public class Ball : MonoBehaviour
 
         // record initial scale, use this as a basis
         initialScale = transform.localScale;
+
+
+        if (_gameSoloManager == null)
+            _gameSoloManager = ThrowBall.Instance._gameSoloManager;
 
         // if no specific camera, grab the default camera
         if (cam == null)
@@ -96,8 +106,8 @@ public class Ball : MonoBehaviour
     void OnEnable()
     {
         //set default position when object enable
-        //initialPosition = transform.position;
-        initialPosition = cam.transform.position + cam.transform.forward * ThrowBall.Instance.distance + cam.transform.up * ThrowBall.Instance.down;
+        initialPosition = transform.position;
+        //initialPosition = cam.transform.position + cam.transform.forward * ThrowBall.Instance.distance + cam.transform.up * ThrowBall.Instance.down;
     }
 
 
@@ -122,15 +132,19 @@ public class Ball : MonoBehaviour
             {
                 isInFloor = true;
                 StartCoroutine(stop());
+          
             }
 
-            //if hit target then got pokemon
+            //if hit target
             if (colliderInfo.gameObject.CompareTag("target"))
             {
 
                 isInFloor = true;
 
                 colliderInfo.gameObject.SetActive(false);
+
+                _gameSoloManager.GetComponent<GameSoloManager>().AddMoney();
+                PlayerPrefs.Save();
 
             }
 
@@ -170,8 +184,8 @@ public class Ball : MonoBehaviour
         isThrowed = false;
         StopAllCoroutines();
 
-        //ball move to initial position
-        StartCoroutine(MoveBackToInitialPositionCoroutine(0.5f));
+        ////ball move to initial position
+        //StartCoroutine(MoveBackToInitialPositionCoroutine(0.5f));
     }
 
     /// <summary>
