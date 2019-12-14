@@ -277,6 +277,7 @@ public class Ball : MonoBehaviour
         {
 
             yield return new WaitForSeconds(0.5f);
+
             initialPosition = cam.transform.position + cam.transform.forward * ThrowBall.Instance.distance + cam.transform.up * ThrowBall.Instance.down;
 
             if (ThrowBall.Instance.IsGameStart)

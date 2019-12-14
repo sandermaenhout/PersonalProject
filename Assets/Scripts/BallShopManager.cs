@@ -35,7 +35,7 @@ public class BallShopManager : MonoBehaviour
 
     void Start()
     { 
-        moneyAmount = PlayerPrefs.GetInt("MoneyAmount", 100);
+        moneyAmount = PlayerPrefs.GetInt("MoneyAmount");
 
         
     }
