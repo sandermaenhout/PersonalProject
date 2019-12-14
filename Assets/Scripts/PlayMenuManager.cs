@@ -4,9 +4,13 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using Photon.Pun;
+using TMPro;
 
 public class PlayMenuManager : MonoBehaviourPunCallbacks
 {
+    int moneyAmount;
+    public TMP_Text moneyAmountText;
+
     [Header("Login UI")]
     public InputField PlayerNameInputField;
     public GameObject uI_LoginGameobject;
@@ -20,16 +24,20 @@ public class PlayMenuManager : MonoBehaviourPunCallbacks
     public bool showConnectionStatus = false;
 
 
+
     #region UNITY METHODS
     // Start is called before the first frame update
     void Start()
     {
-        
+        moneyAmount = PlayerPrefs.GetInt("MoneyAmount");
     }
+
 
     // Update is called once per frame
     void Update()
     {
+        moneyAmountText.text = moneyAmount.ToString();
+
         if (showConnectionStatus == true)
         {
             connectionStatusText.text = "Connection Status: " + PhotonNetwork.NetworkClientState;

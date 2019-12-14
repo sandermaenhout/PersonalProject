@@ -4407,7 +4407,7 @@ ParticleSystem:
         m_RotationOrder: 4
     separateAxes: 0
   ColorModule:
-    enabled: 0
+    enabled: 1
     gradient:
       serializedVersion: 2
       minMaxState: 1
@@ -4415,7 +4415,7 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 1, g: 1, b: 1, a: 1}
+        key0: {r: 0.19900322, g: 0.51908016, b: 0.9811321, a: 1}
         key1: {r: 1, g: 1, b: 1, a: 1}
         key2: {r: 0, g: 0, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
@@ -8076,7 +8076,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.909804, g: 0.909804, b: 0.909804, a: 1}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -8501,7 +8501,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 444541274}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: 100}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 100}
 --- !u!4 &5915861749173183110
 Transform:
   m_ObjectHideFlags: 0
@@ -8582,6 +8582,8 @@ MonoBehaviour:
   canModels:
   - {fileID: 2100000, guid: f1ff5e253e35340898473c672d475ad3, type: 2}
   - {fileID: 2100000, guid: 3c4b4ad7e03ea4b7886d78d58ac26754, type: 2}
+  - {fileID: 2100000, guid: f6e85a2a5b5274ef3a3b71ea3d5a6236, type: 2}
+  - {fileID: 2100000, guid: a01e9a3aa943e49ceb67b58ef843b5af, type: 2}
   canSelectorNumber: 0
 --- !u!1 &6770078948386662552
 GameObject:
@@ -8649,6 +8651,8 @@ MonoBehaviour:
   canModels:
   - {fileID: 2100000, guid: f1ff5e253e35340898473c672d475ad3, type: 2}
   - {fileID: 2100000, guid: 3c4b4ad7e03ea4b7886d78d58ac26754, type: 2}
+  - {fileID: 2100000, guid: f6e85a2a5b5274ef3a3b71ea3d5a6236, type: 2}
+  - {fileID: 2100000, guid: a01e9a3aa943e49ceb67b58ef843b5af, type: 2}
   canSelectorNumber: 0
 --- !u!1 &6770078948553522789
 GameObject:
@@ -8732,6 +8736,8 @@ MonoBehaviour:
   canModels:
   - {fileID: 2100000, guid: f1ff5e253e35340898473c672d475ad3, type: 2}
   - {fileID: 2100000, guid: 3c4b4ad7e03ea4b7886d78d58ac26754, type: 2}
+  - {fileID: 2100000, guid: f6e85a2a5b5274ef3a3b71ea3d5a6236, type: 2}
+  - {fileID: 2100000, guid: a01e9a3aa943e49ceb67b58ef843b5af, type: 2}
   canSelectorNumber: 0
 --- !u!1 &6770078948628421813
 GameObject:
@@ -8799,6 +8805,8 @@ MonoBehaviour:
   canModels:
   - {fileID: 2100000, guid: f1ff5e253e35340898473c672d475ad3, type: 2}
   - {fileID: 2100000, guid: 3c4b4ad7e03ea4b7886d78d58ac26754, type: 2}
+  - {fileID: 2100000, guid: f6e85a2a5b5274ef3a3b71ea3d5a6236, type: 2}
+  - {fileID: 2100000, guid: a01e9a3aa943e49ceb67b58ef843b5af, type: 2}
   canSelectorNumber: 0
 --- !u!1 &6770078949706132948
 GameObject:
@@ -8866,6 +8874,8 @@ MonoBehaviour:
   canModels:
   - {fileID: 2100000, guid: f1ff5e253e35340898473c672d475ad3, type: 2}
   - {fileID: 2100000, guid: 3c4b4ad7e03ea4b7886d78d58ac26754, type: 2}
+  - {fileID: 2100000, guid: f6e85a2a5b5274ef3a3b71ea3d5a6236, type: 2}
+  - {fileID: 2100000, guid: a01e9a3aa943e49ceb67b58ef843b5af, type: 2}
   canSelectorNumber: 0
 --- !u!4 &8601690362335555993
 Transform:
@@ -8947,4 +8957,6 @@ MonoBehaviour:
   canModels:
   - {fileID: 2100000, guid: f1ff5e253e35340898473c672d475ad3, type: 2}
   - {fileID: 2100000, guid: 3c4b4ad7e03ea4b7886d78d58ac26754, type: 2}
+  - {fileID: 2100000, guid: f6e85a2a5b5274ef3a3b71ea3d5a6236, type: 2}
+  - {fileID: 2100000, guid: a01e9a3aa943e49ceb67b58ef843b5af, type: 2}
   canSelectorNumber: 0

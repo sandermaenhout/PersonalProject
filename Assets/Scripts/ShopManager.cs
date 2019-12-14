@@ -6,7 +6,13 @@ using TMPro;
 public class ShopManager : MonoBehaviour
 {
     public TMP_Text moneyAmountText;
-    public int moneyAmount;
+    int moneyAmount;
+
+    public GameObject[] balls;
+    public GameObject[] cans;
+
+    public TMP_Text BallAmount;
+    public TMP_Text CanAmount;
 
     // Start is called before the first frame update
     void Start()
@@ -18,6 +24,9 @@ public class ShopManager : MonoBehaviour
     void Update()
     {
         moneyAmountText.text = moneyAmount.ToString();
+
+        BallAmount.text = balls.Length + " items";
+        CanAmount.text = cans.Length + " items";
     }
 
     public void onBackButtonClicked()
@@ -28,5 +37,10 @@ public class ShopManager : MonoBehaviour
     public void onBallButtonClicked()
     {
         SceneLoader.Instance.LoadScene("Scene_Shop_Ball");
+    }
+
+    public void onCanButtonClicked()
+    {
+        SceneLoader.Instance.LoadScene("Scene_Shop_Can");
     }
 }

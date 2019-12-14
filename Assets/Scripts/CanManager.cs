@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class CanManager : MonoBehaviour
 {
-	int isCokeEquip;
+	int isCokeCanEquip;
+    int isFiftyCanEquip;
+    int isDevineCanEquip;
 
-	public Renderer rend;
+
+    public Renderer rend;
 	public Material[] canModels;
 
 	public int canSelectorNumber;
@@ -15,20 +18,26 @@ public class CanManager : MonoBehaviour
 	void Start()
     {
 
-		isCokeEquip = PlayerPrefs.GetInt("isCokeEquip");
+        isCokeCanEquip = PlayerPrefs.GetInt("isCokeCanEquip");
+        isFiftyCanEquip = PlayerPrefs.GetInt("isFiftyCanEquip");
+        isDevineCanEquip = PlayerPrefs.GetInt("isDevineCanEquip");
 
-		canSelectorNumber = 0;
+        canSelectorNumber = 0;
 
-		if (isCokeEquip == 1)
+		if (isCokeCanEquip == 1)
 		{
 			canSelectorNumber = 1;
 		}
-		//if (isBilliardBallequip == 1)
-		//{
-		//    ballSelectorNumber = 1;
-		//}
+        if (isFiftyCanEquip == 1)
+        {
+            canSelectorNumber = 2;
+        }
+        if (isDevineCanEquip == 1)
+        {
+            canSelectorNumber = 3;
+        }
 
-		rend = GetComponent<Renderer>();
+        rend = GetComponent<Renderer>();
 		rend.enabled = true;
 		rend.sharedMaterial = canModels[canSelectorNumber];
 	}

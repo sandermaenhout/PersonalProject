@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Scene_Shop_Ball.unity
     guid: 962fcd67a924449369f3ab4137c16921
   - enabled: 1
+    path: Assets/Scenes/Scene_Shop_Can.unity
+    guid: 06a8fdb31afdd4331bdb755bb6d1f343
+  - enabled: 1
     path: Assets/Scenes/Scene_Leaderboard.unity
     guid: b16670d0721044487b5712e274b16fde
   - enabled: 1
