@@ -2601,9 +2601,10 @@ MonoBehaviour:
   distance: 1
   down: -0.15
   ballModels:
-  - {fileID: 1546185711364042657, guid: 00f687482bda24fed90b5c9e24e96a14, type: 3}
+  - {fileID: 743935225856064436, guid: 44120b66a5b354eb89c7ca0ef16de719, type: 3}
   - {fileID: 5229461651243091506, guid: 41e88cd4dc20d4933b7597cc7ebf10a5, type: 3}
   - {fileID: 381125104102689901, guid: 2e26bc238bd444dfb88c3868aae157bc, type: 3}
+  - {fileID: 1546185711364042657, guid: 00f687482bda24fed90b5c9e24e96a14, type: 3}
   ballSelectorNumber: 0
 --- !u!65 &1256306693
 BoxCollider:

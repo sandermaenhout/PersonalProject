@@ -48,8 +48,10 @@ public class ThrowBall : MonoBehaviour
     public float down;
 
 
-    int isBaseBallequip;
-    
+    int isBaseBallEquip;
+    int isTennisBallEquip;
+    int isBilliardEquip;
+
     public GameObject[] ballModels;
 
 
@@ -69,18 +71,24 @@ public class ThrowBall : MonoBehaviour
 
         StartCoroutine(GetBallCoroutine());
 
-        isBaseBallequip = PlayerPrefs.GetInt("isBaseBallequip");
+        isBaseBallEquip = PlayerPrefs.GetInt("isBaseBallEquip");
+        isTennisBallEquip = PlayerPrefs.GetInt("isTennisBallEquip");
+        isBilliardEquip = PlayerPrefs.GetInt("isBilliardEquip");
 
         ballSelectorNumber = 0;
 
-        if (isBaseBallequip == 1)
+        if (isBaseBallEquip == 1)
         {
             ballSelectorNumber = 1;
         }
-        //if (isBilliardBallequip == 1)
-        //{
-        //    ballSelectorNumber = 1;
-        //}
+        if (isTennisBallEquip == 1)
+        {
+            ballSelectorNumber = 2;
+        }
+        if (isBilliardEquip == 1)
+        {
+            ballSelectorNumber = 3;
+        }
     }
 
     void Update()
