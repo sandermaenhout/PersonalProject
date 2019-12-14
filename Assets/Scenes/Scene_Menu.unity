@@ -1216,13 +1216,13 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1630618094}
-    characterCount: 0
+    characterCount: 5
     spriteCount: 0
     spaceCount: 0
-    wordCount: 0
+    wordCount: 1
     linkCount: 0
-    lineCount: 0
-    pageCount: 0
+    lineCount: 1
+    pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
@@ -1617,6 +1617,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba9cde776506841c0b1da4f6012a37e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moneyAmountText: {fileID: 1630618094}
+  moneyAmount: 0
 --- !u!4 &1992169559
 Transform:
   m_ObjectHideFlags: 0

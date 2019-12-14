@@ -3,19 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class MenuManager : MonoBehaviour
 {
 
+    public TMP_Text moneyAmountText;
+    public int moneyAmount;
+
     // Start is called before the first frame update
     void Start()
     {
+        moneyAmount = PlayerPrefs.GetInt("MoneyAmount");
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        moneyAmountText.text = moneyAmount.ToString();
     }
 
     #region UI Callback Methods

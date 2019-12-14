@@ -132,7 +132,7 @@ public class Ball : MonoBehaviour
             {
                 isInFloor = true;
                 StartCoroutine(stop());
-          
+
             }
 
             //if hit target

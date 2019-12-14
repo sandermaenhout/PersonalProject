@@ -6,9 +6,22 @@ using TMPro;
 
 public class OptionsManager : MonoBehaviour
 {
-
     public AudioMixer audioMixer;
     public TMP_Dropdown qualityDropdown;
+    public TMP_Text moneyAmountText;
+    public int moneyAmount;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        moneyAmount = PlayerPrefs.GetInt("MoneyAmount");
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        moneyAmountText.text = moneyAmount.ToString();
+    }
 
     public void SetVolume(float volume)
     {

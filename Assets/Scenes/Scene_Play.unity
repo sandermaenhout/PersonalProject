@@ -2336,7 +2336,7 @@ MonoBehaviour:
   raycastCenter_Image: {fileID: 3988416}
   ballController: {fileID: 1256306691}
   moneyAmount: 0
-  money: 0
+  money: 10
   moneyAmountText: {fileID: 28769390}
 --- !u!1 &1070027340
 GameObject:
@@ -2600,10 +2600,10 @@ MonoBehaviour:
   _gameSoloManager: {fileID: 1038782824}
   distance: 1
   down: -0.15
-  moneyAmount: 0
   ballModels:
   - {fileID: 1546185711364042657, guid: 00f687482bda24fed90b5c9e24e96a14, type: 3}
   - {fileID: 5229461651243091506, guid: 41e88cd4dc20d4933b7597cc7ebf10a5, type: 3}
+  - {fileID: 381125104102689901, guid: 2e26bc238bd444dfb88c3868aae157bc, type: 3}
   ballSelectorNumber: 0
 --- !u!65 &1256306693
 BoxCollider:
@@ -8181,7 +8181,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f1ff5e253e35340898473c672d475ad3, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8220,7 +8220,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f1ff5e253e35340898473c672d475ad3, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8259,7 +8259,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f1ff5e253e35340898473c672d475ad3, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8298,7 +8298,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f1ff5e253e35340898473c672d475ad3, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8337,7 +8337,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f1ff5e253e35340898473c672d475ad3, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8416,7 +8416,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f1ff5e253e35340898473c672d475ad3, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8528,6 +8528,7 @@ GameObject:
   - component: {fileID: 842401237061786829}
   - component: {fileID: 6770078948074785464}
   - component: {fileID: 6770078948074785463}
+  - component: {fileID: 6770078948074785465}
   m_Layer: 0
   m_Name: Can
   m_TagString: target
@@ -8564,6 +8565,23 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &6770078948074785465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6770078948074785462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65a2eac9f3c0645fea0ce0075014b211, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rend: {fileID: 842401237061786829}
+  canModels:
+  - {fileID: 2100000, guid: f1ff5e253e35340898473c672d475ad3, type: 2}
+  - {fileID: 2100000, guid: 3c4b4ad7e03ea4b7886d78d58ac26754, type: 2}
+  canSelectorNumber: 0
 --- !u!1 &6770078948386662552
 GameObject:
   m_ObjectHideFlags: 0
@@ -8577,6 +8595,7 @@ GameObject:
   - component: {fileID: 842401236297465571}
   - component: {fileID: 6770078948386662554}
   - component: {fileID: 6770078948386662553}
+  - component: {fileID: 6770078948386662555}
   m_Layer: 0
   m_Name: Can
   m_TagString: target
@@ -8613,6 +8632,23 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &6770078948386662555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6770078948386662552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65a2eac9f3c0645fea0ce0075014b211, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rend: {fileID: 842401237061786829}
+  canModels:
+  - {fileID: 2100000, guid: f1ff5e253e35340898473c672d475ad3, type: 2}
+  - {fileID: 2100000, guid: 3c4b4ad7e03ea4b7886d78d58ac26754, type: 2}
+  canSelectorNumber: 0
 --- !u!1 &6770078948553522789
 GameObject:
   m_ObjectHideFlags: 0
@@ -8626,6 +8662,8 @@ GameObject:
   - component: {fileID: 842401236061923358}
   - component: {fileID: 6770078948553522791}
   - component: {fileID: 6770078948553522790}
+  - component: {fileID: 6770078948553522793}
+  - component: {fileID: 6770078948553522792}
   m_Layer: 0
   m_Name: Can
   m_TagString: target
@@ -8662,6 +8700,38 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &6770078948553522792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6770078948553522789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65a2eac9f3c0645fea0ce0075014b211, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rend: {fileID: 0}
+  canModels: []
+  canSelectorNumber: 0
+--- !u!114 &6770078948553522793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6770078948553522789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65a2eac9f3c0645fea0ce0075014b211, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rend: {fileID: 842401237061786829}
+  canModels:
+  - {fileID: 2100000, guid: f1ff5e253e35340898473c672d475ad3, type: 2}
+  - {fileID: 2100000, guid: 3c4b4ad7e03ea4b7886d78d58ac26754, type: 2}
+  canSelectorNumber: 0
 --- !u!1 &6770078948628421813
 GameObject:
   m_ObjectHideFlags: 0
@@ -8675,6 +8745,7 @@ GameObject:
   - component: {fileID: 842401236541704910}
   - component: {fileID: 6770078948628421815}
   - component: {fileID: 6770078948628421814}
+  - component: {fileID: 6770078948628421816}
   m_Layer: 0
   m_Name: Can
   m_TagString: target
@@ -8711,6 +8782,23 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &6770078948628421816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6770078948628421813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65a2eac9f3c0645fea0ce0075014b211, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rend: {fileID: 842401237061786829}
+  canModels:
+  - {fileID: 2100000, guid: f1ff5e253e35340898473c672d475ad3, type: 2}
+  - {fileID: 2100000, guid: 3c4b4ad7e03ea4b7886d78d58ac26754, type: 2}
+  canSelectorNumber: 0
 --- !u!1 &6770078949706132948
 GameObject:
   m_ObjectHideFlags: 0
@@ -8724,6 +8812,7 @@ GameObject:
   - component: {fileID: 842401237619358639}
   - component: {fileID: 6770078949706132950}
   - component: {fileID: 6770078949706132949}
+  - component: {fileID: 6770078949706132951}
   m_Layer: 0
   m_Name: Can
   m_TagString: target
@@ -8760,6 +8849,23 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &6770078949706132951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6770078949706132948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65a2eac9f3c0645fea0ce0075014b211, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rend: {fileID: 842401237061786829}
+  canModels:
+  - {fileID: 2100000, guid: f1ff5e253e35340898473c672d475ad3, type: 2}
+  - {fileID: 2100000, guid: 3c4b4ad7e03ea4b7886d78d58ac26754, type: 2}
+  canSelectorNumber: 0
 --- !u!4 &8601690362335555993
 Transform:
   m_ObjectHideFlags: 0
@@ -8787,6 +8893,7 @@ GameObject:
   - component: {fileID: 3384108031305722032}
   - component: {fileID: 8697064176880058061}
   - component: {fileID: 8697064176880058060}
+  - component: {fileID: 8697064176880058062}
   m_Layer: 0
   m_Name: Can
   m_TagString: target
@@ -8823,3 +8930,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &8697064176880058062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8697064176880058059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65a2eac9f3c0645fea0ce0075014b211, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rend: {fileID: 842401237061786829}
+  canModels:
+  - {fileID: 2100000, guid: f1ff5e253e35340898473c672d475ad3, type: 2}
+  - {fileID: 2100000, guid: 3c4b4ad7e03ea4b7886d78d58ac26754, type: 2}
+  canSelectorNumber: 0

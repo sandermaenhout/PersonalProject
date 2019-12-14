@@ -17,11 +17,6 @@ public class GameSoloManager : MonoBehaviour
     public int money = 1;
     public TMP_Text moneyAmountText;
 
-    private static GameSoloManager throwPaperInstance;
-
-
-
-
     // Start is called before the first frame update
     void Start()
     {

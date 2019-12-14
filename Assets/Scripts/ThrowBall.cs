@@ -47,8 +47,6 @@ public class ThrowBall : MonoBehaviour
     public float distance;
     public float down;
 
-    public int moneyAmount;
-
 
     int isBaseBallequip;
     
@@ -68,8 +66,6 @@ public class ThrowBall : MonoBehaviour
 
     void Start()
     {
-
-        moneyAmount = PlayerPrefs.GetInt("MoneyAmount");
 
         StartCoroutine(GetBallCoroutine());
 
