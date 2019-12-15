@@ -50,6 +50,7 @@ public class ArPlacementAndPlaneDetectionController : MonoBehaviour
         placeButton.SetActive(false);
         adjustButton.SetActive(true);
         searchForGameButton.SetActive(true);
+
         informUIPanel_text.text = "Great! You placed the CANS! Let's start the game";
     }
 

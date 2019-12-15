@@ -8,14 +8,18 @@ public class CanManager : MonoBehaviour
     int isFiftyCanEquip;
     int isDevineCanEquip;
 
+    private bool canHits;
 
     public Renderer rend;
-	public Material[] canModels;
+    public Material[] canModels;
 
 	public int canSelectorNumber;
 
-	// Start is called before the first frame update
-	void Start()
+    public GameObject _gameSoloManager;
+    public GameObject can;
+
+    // Start is called before the first frame update
+    void Start()
     {
 
         isCokeCanEquip = PlayerPrefs.GetInt("isCokeCanEquip");
@@ -42,5 +46,19 @@ public class CanManager : MonoBehaviour
 		rend.sharedMaterial = canModels[canSelectorNumber];
 	}
 
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "floor")
+        {
+            can.gameObject.SetActive(false);
+            _gameSoloManager.GetComponent<GameSoloManager>().CansHit();
+            _gameSoloManager.GetComponent<GameSoloManager>().AddMoney();
+
+        }
+
+
+
+    }
 
 }

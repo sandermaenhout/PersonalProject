@@ -10,7 +10,7 @@ public class ArPlaceManager : MonoBehaviour
     static List<ARRaycastHit> raycast_Hits = new List<ARRaycastHit>();
 
     public Camera aRCamera;
-    public GameObject battleArenaGameobject;
+    public GameObject CanTowerGameobject;
 
     private void Awake()
     {
@@ -34,7 +34,7 @@ public class ArPlaceManager : MonoBehaviour
             Pose hitPose = raycast_Hits[0].pose;
             Vector3 positionToBePlaced = hitPose.position;
 
-            battleArenaGameobject.transform.position = positionToBePlaced;
+            CanTowerGameobject.transform.position = positionToBePlaced;
         }
     }
 }

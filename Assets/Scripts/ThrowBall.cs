@@ -16,8 +16,8 @@ public class ThrowBall : MonoBehaviour
     private bool isGameStart = true;
     public bool isCurveThrow = false;
     private Vector3 lastPos;
-    private Vector3 lastBallPosition = Vector3.zero;
-    private bool isStartRoate = false;
+    private Vector3 lastBallPosition = Vector3.forward;
+    private bool isStartRotate = false;
     List<Vector3> ballPos = new List<Vector3>();
     List<float> ballTime = new List<float>();
 
@@ -48,6 +48,8 @@ public class ThrowBall : MonoBehaviour
     public float down;
 
 
+
+    
     int isBaseBallEquip;
     int isTennisBallEquip;
     int isBilliardEquip;
@@ -93,11 +95,11 @@ public class ThrowBall : MonoBehaviour
 
     void Update()
     {
-        
 
         if (currentBall)
         {
             transform.position = currentBall.transform.position;
+
         }
 
         if (currentBall && isGettingDirection)
@@ -124,7 +126,7 @@ public class ThrowBall : MonoBehaviour
             if (Vector3.Distance(currentBall.transform.position, lastBallPosition) > 0f)
             {
 
-                if (!isStartRoate)
+                if (!isStartRotate)
                 {
                     Invoke("ResetPoint", 0.01f);
                 }
@@ -157,7 +159,7 @@ public class ThrowBall : MonoBehaviour
                     }
                 }
 
-                isStartRoate = true;
+                isStartRotate = true;
                 if (angle > 0)
                 {
                     if (lastAngel >= angle)
@@ -198,7 +200,7 @@ public class ThrowBall : MonoBehaviour
             else
             {
 
-                if (isStartRoate == true)
+                if (isStartRotate == true)
                 {
                     StartCoroutine(StopRotation(angleDirection, 0.5f));
                 }
@@ -213,7 +215,7 @@ public class ThrowBall : MonoBehaviour
     private void ResetPoint()
     {
 
-        if (!isStartRoate)
+        if (!isStartRotate)
         {
             totalX = 0f;
             totalY = 0f;
@@ -255,7 +257,7 @@ public class ThrowBall : MonoBehaviour
     IEnumerator StopRotation(int direction, float t)
     {
 
-        isStartRoate = false;
+        isStartRotate = false;
 
 
         float rate = 1.0f / t;
@@ -263,7 +265,7 @@ public class ThrowBall : MonoBehaviour
         while (i < 1.0f)
         {
             i += rate * Time.deltaTime;
-            if (!isStartRoate)
+            if (!isStartRotate)
             {
                 if (direction == 1)
                 {
@@ -280,7 +282,7 @@ public class ThrowBall : MonoBehaviour
             yield return 0;
         }
 
-        if (!isStartRoate)
+        if (!isStartRotate)
         {
 
             totalX = 0f;
@@ -343,11 +345,9 @@ public class ThrowBall : MonoBehaviour
         {
             startTime = Time.time;
             lastPos = startPos;
-            startPos = cam.WorldToScreenPoint(currentBall.transform.position);
-            startPos.z = currentBall.transform.position.z - cam.transform.position.z;
-            startPos = cam.WorldToScreenPoint(startPos);
-
-            yield return new WaitForSeconds(0.01f);
+            startPos = currentBall.transform.position;
+            startPos.z = currentBall.transform.position.z - cam.transform.rotation.y;
+           yield return new WaitForSeconds(0.01f);
 
         }
     }
@@ -368,6 +368,8 @@ public class ThrowBall : MonoBehaviour
             v3Pos.z = currentBall.transform.position.z;
             v3Offset.z = 0;
             currentBall.transform.position = v3Pos + v3Offset;
+
+ 
 
 
             if (ballPos.Count > 0)
@@ -412,10 +414,11 @@ public class ThrowBall : MonoBehaviour
         ObjectMouseDown = false;
     }
 
-    //Throw pokeball when mouse up from ball
+    //Throw ball when mouse up from ball
 
     void OnMouseUp()
     {
+
         curveParticle.Stop();
         curveParticle.gameObject.SetActive(false);
         isGettingDirection = false;
@@ -423,9 +426,14 @@ public class ThrowBall : MonoBehaviour
         if (!currentBall || !isGameStart)
             return;
 
+
         var endPos = Input.mousePosition;
-        endPos.z = currentBall.transform.position.z - cam.transform.position.z;
-        endPos = cam.WorldToScreenPoint(endPos);
+        endPos.z = currentBall.transform.position.z + cam.transform.rotation.y;
+
+        Debug.Log("EndPostion: " + endPos) ;
+        Debug.Log("EndPostion Z: " + endPos.z);
+        Debug.Log("Currentball pos: " + currentBall.transform.position.z);
+        
 
 
         int ballPositionIndex = ballPos.Count - 2;
@@ -467,6 +475,7 @@ public class ThrowBall : MonoBehaviour
 
         //send message ball was thrown
         currentBall.SendMessage("SetIsThrowed", true, SendMessageOptions.RequireReceiver);
+        _gameSoloManager.GetComponent<GameSoloManager>().BallThrowed();
 
 
         if (isCurveThrow)

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using TMPro;
 
 public class Ball : MonoBehaviour
 {
@@ -24,22 +25,22 @@ public class Ball : MonoBehaviour
     private bool isRotateLeft = true;
     private bool isParticleFollowBall = false;
     public float objectScale = 1.0f;
-    public Camera cam;
+    public float moveSpeed;
+    Camera cam;
 
-    public GameObject _gameSoloManager;
+    GameObject _gameSoloManager;
+
 
 
     #endregion
 
-    #region Public_Variables
-    #endregion
+
 
     #region Unity_Callbacks
 
 
     void Start()
     {
-        
 
         rigid = GetComponent<Rigidbody>();
         //initalize gradually jump coroutine
@@ -124,35 +125,9 @@ public class Ball : MonoBehaviour
 
         }
 
-        //if object hit directly to taget
-        if (!isInFloor)
-        {
-
-            if (colliderInfo.gameObject.CompareTag("floor"))
-            {
-                isInFloor = true;
-                StartCoroutine(stop());
-
-            }
-
-            //if hit target
-            if (colliderInfo.gameObject.CompareTag("target"))
-            {
-
-                isInFloor = true;
-
-                colliderInfo.gameObject.SetActive(false);
-
-                _gameSoloManager.GetComponent<GameSoloManager>().AddMoney();
-                PlayerPrefs.Save();
-
-            }
-
-        }
     }
 
     #endregion
-
     #region Private_Methods
     /// <summary>
     /// Sets the is throwed.
@@ -185,7 +160,7 @@ public class Ball : MonoBehaviour
         StopAllCoroutines();
 
         ////ball move to initial position
-        //StartCoroutine(MoveBackToInitialPositionCoroutine(0.5f));
+        StartCoroutine(MoveBackToInitialPositionCoroutine(0.5f));
     }
 
     /// <summary>
@@ -279,6 +254,7 @@ public class Ball : MonoBehaviour
             yield return new WaitForSeconds(0.5f);
 
             initialPosition = cam.transform.position + cam.transform.forward * ThrowBall.Instance.distance + cam.transform.up * ThrowBall.Instance.down;
+            Debug.Log(initialPosition);
 
             if (ThrowBall.Instance.IsGameStart)
             {
