@@ -6,17 +6,19 @@ using TMPro;
 
 public class GameSoloManager : MonoBehaviour
 {
-    int cans = 12; //Double the value because by hit he does -2 instead of -1
-    int balls = 3;
+    public int cans; //Double the value because by hit he does -2 instead of -1
+    public int balls;
 
     [Header("UI")]
     public GameObject uI_InformPanelGameObject;
     public GameObject searchForGamesButtonGameObject;
     public GameObject adjust_Button;
+    public GameObject inventory_Button;
     public GameObject raycastCenter_Image;
     public GameObject ballController;
 
     public GameObject restartButton;
+    public GameObject nextLevelButton;
     public TextMeshProUGUI informUIPanel_text;
     public GameObject ballsLeft;
     public TextMeshProUGUI ballsText;
@@ -61,7 +63,7 @@ public class GameSoloManager : MonoBehaviour
     {
         balls -= 1;
 
-        if(balls == 2)
+        if (balls == 2)
         {
             ballsLifes[2].gameObject.SetActive(false);
         }
@@ -85,7 +87,15 @@ public class GameSoloManager : MonoBehaviour
             ballController.SetActive(false);
             uI_InformPanelGameObject.SetActive(true);
             informUIPanel_text.text = "You win! Congratulations!";
-            restartButton.SetActive(true);
+            if(nextLevelButton == null)
+            {
+                restartButton.SetActive(true);
+            }
+            else
+            {
+                nextLevelButton.SetActive(true);
+            }
+            
         }
         if (balls == 0 && cans > 0)
         {
@@ -106,12 +116,24 @@ public class GameSoloManager : MonoBehaviour
         uI_InformPanelGameObject.SetActive(false);
         ballController.SetActive(true);
         ballsLeft.SetActive(true);
+        inventory_Button.SetActive(true);
     }
 
     public void Restart()
     {
         SceneLoader.Instance.LoadScene("Scene_Play");
     }
+
+    public void NextLevel2()
+    {
+        SceneLoader.Instance.LoadScene("Scene_Level2");
+    }
+
+    public void NextLevel3()
+    {
+        SceneLoader.Instance.LoadScene("Scene_Level3");
+    }
+
 
     public void onQuitButtonClicked()
     {

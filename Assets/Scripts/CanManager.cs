@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class CanManager : MonoBehaviour
 {
-	int isCokeCanEquip;
+    int isSodaCanEquip;
+    int isCokeCanEquip;
     int isFiftyCanEquip;
     int isDevineCanEquip;
-
-    private bool canHits;
 
     public Renderer rend;
     public Material[] canModels;
@@ -19,19 +18,22 @@ public class CanManager : MonoBehaviour
     public GameObject can;
 
     // Start is called before the first frame update
-    void Start()
+    void Update()
     {
-
+        isSodaCanEquip = PlayerPrefs.GetInt("isSodaCanEquip");
         isCokeCanEquip = PlayerPrefs.GetInt("isCokeCanEquip");
         isFiftyCanEquip = PlayerPrefs.GetInt("isFiftyCanEquip");
         isDevineCanEquip = PlayerPrefs.GetInt("isDevineCanEquip");
 
-        canSelectorNumber = 0;
 
-		if (isCokeCanEquip == 1)
-		{
-			canSelectorNumber = 1;
-		}
+        if (isSodaCanEquip == 1)
+        {
+            canSelectorNumber = 0;
+        }
+        if (isCokeCanEquip == 1)
+        {
+            canSelectorNumber = 1;
+        }
         if (isFiftyCanEquip == 1)
         {
             canSelectorNumber = 2;
@@ -42,9 +44,9 @@ public class CanManager : MonoBehaviour
         }
 
         rend = GetComponent<Renderer>();
-		rend.enabled = true;
-		rend.sharedMaterial = canModels[canSelectorNumber];
-	}
+        rend.enabled = true;
+        rend.sharedMaterial = canModels[canSelectorNumber];
+    }
 
 
     void OnCollisionEnter(Collision collision)

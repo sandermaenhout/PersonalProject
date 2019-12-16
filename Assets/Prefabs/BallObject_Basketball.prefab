@@ -86,8 +86,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialScale: {x: 0.2, y: 0.2, z: 0.2}
   objectScale: 1
-  cam: {fileID: 0}
-  _gameSoloManager: {fileID: 0}
+  moveSpeed: 0
 --- !u!1 &6922033355042827670
 GameObject:
   m_ObjectHideFlags: 0

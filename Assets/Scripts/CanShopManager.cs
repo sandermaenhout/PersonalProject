@@ -166,8 +166,6 @@ public class CanShopManager : MonoBehaviour
         isFiftyCanEquip = PlayerPrefs.GetInt("isFiftyCanEquip");
         isDevineCanEquip = PlayerPrefs.GetInt("isDevineCanEquip");
 
-        isCokeCanSold = PlayerPrefs.GetInt("isCokeCanSold");
-
 
 
         if (isFiftyCanEquip == 1)

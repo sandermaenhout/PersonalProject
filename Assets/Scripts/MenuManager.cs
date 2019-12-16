@@ -37,11 +37,6 @@ public class MenuManager : MonoBehaviour
         SceneLoader.Instance.LoadScene("Scene_Shop");
     }
 
-    public void OnLeaderboardsButtonClicked()
-    {
-        //SceneManager.LoadScene("Scene_Loading");
-        SceneLoader.Instance.LoadScene("Scene_Leaderboard");
-    }
 
     public void OnOptionsButtonClicked()
     {
