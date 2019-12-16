@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class SceneLoader : Singleton<SceneLoader>
 {
     private string sceneNameToBeLoaded;
+    public Image loadingBar;
 
     public void LoadScene(string _sceneName)
     {
@@ -28,10 +30,12 @@ public class SceneLoader : Singleton<SceneLoader>
         var asyncSceneLoading = SceneManager.LoadSceneAsync(sceneNameToBeLoaded);
 
         asyncSceneLoading.allowSceneActivation = false;
+        Debug.Log(asyncSceneLoading.progress);
+        
 
         while (!asyncSceneLoading.isDone)
         {
-            Debug.Log(asyncSceneLoading.progress + "%");
+            
             if (asyncSceneLoading.progress >= 0.9f)
             {
                 asyncSceneLoading.allowSceneActivation = true;
