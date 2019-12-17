@@ -5,25 +5,40 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Scenes/PlayMenu.unity
-    guid: 14ffd3d5d422f46919aa8c2a223f21db
-  - enabled: 1
-    path: Assets/Scenes/LeaderBoard.unity
-    guid: b16670d0721044487b5712e274b16fde
-  - enabled: 1
-    path: Assets/Scenes/Loading.unity
-    guid: 0985774a13e6048edb05048890c91b61
-  - enabled: 1
-    path: Assets/Scenes/Menu.unity
+    path: Assets/Scenes/Scene_Menu.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
-    path: Assets/Scenes/Options.unity
+    path: Assets/Scenes/Scene_Shop.unity
+    guid: f91eeba2a163b4ae09fdac0f4c4eb062
+  - enabled: 1
+    path: Assets/Scenes/Scene_Shop_Ball.unity
+    guid: 962fcd67a924449369f3ab4137c16921
+  - enabled: 1
+    path: Assets/Scenes/Scene_Shop_Can.unity
+    guid: 06a8fdb31afdd4331bdb755bb6d1f343
+  - enabled: 1
+    path: Assets/Scenes/Scene_Options.unity
     guid: c20cdb4f9a3cc4aa79745a5fadd43fdb
   - enabled: 1
-    path: Assets/Scenes/Play.unity
+    path: Assets/Scenes/Scene_Loading.unity
+    guid: 0985774a13e6048edb05048890c91b61
+  - enabled: 1
+    path: Assets/Scenes/Scene_PlayMenu.unity
+    guid: 25303b8d29a954489bd6a430a89364b7
+  - enabled: 1
+    path: Assets/Scenes/Scene_PlayMultiplayer.unity
+    guid: e5e05c028d72840c19d944929c04831a
+  - enabled: 1
+    path: Assets/Scenes/Scene_Play.unity
     guid: a695f5c782e5a4ba4b41d6d8695e324a
   - enabled: 1
-    path: Assets/Scenes/Shop.unity
-    guid: f91eeba2a163b4ae09fdac0f4c4eb062
+    path: Assets/Scenes/Scene_Level2.unity
+    guid: 32e89415866fb4c59aa6cf527c263e47
+  - enabled: 1
+    path: Assets/Scenes/Scene_Level3.unity
+    guid: ddcf058c6eca44ababe63653fb68e790
   m_configObjects: {}
