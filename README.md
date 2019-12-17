@@ -12,3 +12,7 @@ After you opened it just connect your phone and click build and run.
 
 Done! Have fun play this game.
 
+
+
+Some extra info about my progress
+https://sandermaenhout4.wixsite.com/personalproject
