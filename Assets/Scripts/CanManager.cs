@@ -10,11 +10,15 @@ public class CanManager : MonoBehaviour
     int isDevineCanEquip;
 
     public Renderer rend;
+    //public bool multiplayer;
     public Material[] canModels;
+    public AudioSource canFallingSound;
 
 	public int canSelectorNumber;
 
     public GameObject _gameSoloManager;
+    public GameObject _multiplayerManager;
+    public GameObject _checkwin;
     public GameObject can;
 
     // Start is called before the first frame update
@@ -53,9 +57,19 @@ public class CanManager : MonoBehaviour
     {
         if (collision.gameObject.tag == "floor")
         {
+            canFallingSound.Play();
             can.gameObject.SetActive(false);
-            _gameSoloManager.GetComponent<GameSoloManager>().CansHit();
-            _gameSoloManager.GetComponent<GameSoloManager>().AddMoney();
+            if(_gameSoloManager == null)
+            {
+                _checkwin.GetComponent<CheckWinMulti>().CansHit();
+                _multiplayerManager.GetComponent<MultiplayerManager>().AddMoney();
+            }
+            else
+            {
+                _gameSoloManager.GetComponent<GameSoloManager>().CansHit();
+                _gameSoloManager.GetComponent<GameSoloManager>().AddMoney();
+            }
+            
 
         }
 

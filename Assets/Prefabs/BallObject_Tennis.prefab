@@ -87,6 +87,7 @@ MonoBehaviour:
   initialScale: {x: 0, y: 0, z: 0}
   objectScale: 1
   moveSpeed: 0
+  ball: {fileID: 381125104102689901}
 --- !u!1 &8000920506174872143
 GameObject:
   m_ObjectHideFlags: 0

@@ -86,8 +86,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialScale: {x: 0, y: 0, z: 0}
   objectScale: 1
-  cam: {fileID: 0}
-  _gameSoloManager: {fileID: 0}
+  moveSpeed: 0
+  ball: {fileID: 1546185711364042657}
 --- !u!1 &9167035510941825411
 GameObject:
   m_ObjectHideFlags: 0

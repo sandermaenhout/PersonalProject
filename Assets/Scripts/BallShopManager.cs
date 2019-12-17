@@ -260,13 +260,13 @@ public class BallShopManager : MonoBehaviour
         PlayerPrefs.Save();
     }
 
-    void OnGUI()
-    {
-        //Delete all of the PlayerPrefs settings by pressing this Button
-        if (GUI.Button(new Rect(100, 200, 200, 60), "Delete"))
-        {
-            PlayerPrefs.DeleteAll();
-        }
-    }
+    //void OnGUI()
+    //{
+    //    //Delete all of the PlayerPrefs settings by pressing this Button
+    //    if (GUI.Button(new Rect(100, 200, 200, 60), "Delete"))
+    //    {
+    //        PlayerPrefs.DeleteAll();
+    //    }
+    //}
 
 }

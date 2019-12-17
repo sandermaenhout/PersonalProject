@@ -28,6 +28,8 @@ public class Ball : MonoBehaviour
     public float moveSpeed;
     Camera cam;
 
+    public GameObject ball;
+
     GameObject _gameSoloManager;
 
 
@@ -114,16 +116,11 @@ public class Ball : MonoBehaviour
 
     void OnCollisionEnter(Collision colliderInfo)
     {
-
-        //if object will not hit directly to target
-        if (isInFloor)
-        {
-            if (colliderInfo.gameObject.CompareTag("target"))
+            if (colliderInfo.gameObject.CompareTag("floor"))
             {
-                isCurve = false;
+                Destroy(ball);
             }
 
-        }
 
     }
 

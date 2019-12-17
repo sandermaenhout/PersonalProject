@@ -33,6 +33,7 @@ public class ThrowBall : MonoBehaviour
 
     public Vector3 minThrow;
     public Vector3 maxThrow;
+    public AudioSource swipe;
     //public GameObject ball;
     private Transform currentBallChild;
     private float dist;
@@ -333,7 +334,9 @@ public class ThrowBall : MonoBehaviour
         isCurveThrow = false;
 
         isGettingDirection = true;
+        Debug.Log("direction: " + isGettingDirection);
         currentBall.SendMessage("SetIsThrowed", true, SendMessageOptions.RequireReceiver);
+        swipe.Play();
 
         currentBallChild = currentBall.transform.Find("Ball");
 
@@ -478,7 +481,18 @@ public class ThrowBall : MonoBehaviour
 
         //send message ball was thrown
         currentBall.SendMessage("SetIsThrowed", true, SendMessageOptions.RequireReceiver);
-        _gameSoloManager.GetComponent<GameSoloManager>().BallThrowed();
+        if (_gameSoloManager == null)
+        {
+            return;
+        }
+        else
+        {
+            _gameSoloManager.GetComponent<GameSoloManager>().BallThrowed();
+        }
+
+        
+       
+        
 
 
         if (isCurveThrow)
